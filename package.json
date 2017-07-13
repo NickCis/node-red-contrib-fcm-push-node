@@ -7,7 +7,7 @@
     "build:html": "cp src/*.html dist",
     "build:js": "babel src --out-dir dist",
     "build": "rimraf dist &&  npm run build:js && npm run build:html",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
