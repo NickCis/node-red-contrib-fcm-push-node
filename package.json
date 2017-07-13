@@ -1,0 +1,53 @@
+{
+  "name": "node-red-contrib-fcm-push-node",
+  "version": "0.0.1",
+  "description": "Node-red Node interface to Firebase Cloud Messaging (FCM) for Android and iOS",
+  "main": "dist/fcm-push.js",
+  "scripts": {
+    "build:html": "cp src/*.html dist",
+    "build:js": "babel src --out-dir dist",
+    "build": "rimraf dist &&  npm run build:js && npm run build:html",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickcis/node-red-contrib-fcm-push-node.git"
+  },
+  "keywords": [
+    "node",
+    "node-red",
+    "android",
+    "ios",
+    "fcm",
+    "fcm-push",
+    "firebase",
+    "cloud",
+    "messaging",
+    "push",
+    "notification"
+  ],
+  "node-red": {
+    "nodes": {
+      "fcm-push": "dist/fcm-push.js"
+    }
+  },
+  "author": "nickcis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nickcis/node-red-contrib-fcm-push-node/issues"
+  },
+  "homepage": "https://github.com/nickcis/node-red-contrib-fcm-push-node#readme",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "dependencies": {
+    "fcm-push": "^1.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "rimraf": "^2.6.1"
+  }
+}
