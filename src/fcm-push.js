@@ -16,6 +16,9 @@ module.exports = RED => {
 
         if (msg.payload.data)
           message.data = msg.payload.data;
+        
+        if (msg.payload.messageProperties)
+          message = Object.assign(message, msg.payload.messageProperties)
 
         fcm.send(message)
           .then(response => {
