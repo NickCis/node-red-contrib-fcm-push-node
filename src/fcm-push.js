@@ -16,6 +16,22 @@ module.exports = RED => {
 
         if (msg.payload.data)
           message.data = msg.payload.data;
+        if (msg.payload.registration_ids)
+          message.data = msg.payload.registration_ids;
+        if (msg.payload.condition)
+          message.data = msg.payload.condition;
+        if (msg.payload.priority)
+          message.data = msg.payload.priority;
+        if ('content_available' in msg.payload)
+          message.data = msg.payload.content_available;
+        if ('mutable_content' in msg.payload)
+          message.data = msg.payload.mutable_content;
+        if (msg.payload.time_to_live)
+          message.data = msg.payload.time_to_live;
+        if (msg.payload.restricted_package_name)
+          message.data = msg.payload.restricted_package_name;   
+        if ('dry_run' in msg.payload)
+          message.data = msg.payload.dry_run;
 
         fcm.send(message)
           .then(response => {
